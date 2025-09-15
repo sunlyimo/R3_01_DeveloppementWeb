@@ -1,3 +1,60 @@
+const buttons = document.querySelectorAll(".choice-button")
+
+const labelVictoires = document.getElementById("nb-victoires")
+const labelEgalites = document.getElementById("nb-egalites")
+const labelDefaites = document.getElementById("nb-defaites")
+
+const resetButton = document.querySelector(".reset-button")
+
+
+let nbVictoires = 0
+let nbEgalites = 0
+let nbDefaites = 0
+
+const choix = ["Pierre", "Feuille", "Ciseaux"]
+
+function actualiserScore() {
+    labelVictoires.textContent = nbVictoires
+    labelEgalites.textContent = nbEgalites
+    labelDefaites.textContent = nbDefaites
+}
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const choixRobot = choix[Math.floor(Math.random() * 3)]
+
+        const choixJoueur = button.textContent
+
+        if (choixRobot === choixJoueur) {
+            nbEgalites += 1
+        } else if (
+            (choixJoueur === 'Pierre' && choixRobot === 'Ciseaux') ||
+            (choixJoueur === 'Ciseaux' && choixRobot === 'Feuille') ||
+            (choixJoueur === 'Feuille' && choixRobot === 'Pierre')
+        ) {
+            nbVictoires += 1
+        } else {
+            nbDefaites += 1
+        }
+        actualiserScore()
+    })
+})
+
+resetButton.addEventListener('click', () => {
+    nbVictoires = 0
+    nbEgalites = 0
+    nbDefaites = 0
+    actualiserScore()
+})
+
+
+
+
+
+
+
+
+
 /* Exo 1: Déclarez une variable pour stocker une température en degrés Celsius.
 Convertissez cette température en degrés Fahrenheit en utilisant la
 formule : F = C * 9/5 + 32.
@@ -43,8 +100,8 @@ Convertissez cette variable en décimal en utilisant la fonction parseInt().
 Affichez le nombre binaire et sa conversion décimale.*/
 let binaire = "010011010101011"
 let decimal = parseInt(binaire, 2)
-console.log("Binaire: "+binaire)
-console.log("Décimal: "+decimal)
+console.log("Binaire: " + binaire)
+console.log("Décimal: " + decimal)
 
 
 
