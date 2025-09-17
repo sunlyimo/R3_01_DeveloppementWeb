@@ -103,20 +103,6 @@ let decimal = parseInt(binaire, 2)
 console.log("Binaire: " + binaire)
 console.log("Décimal: " + decimal)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     console.log("La page a fini de charger");
 })
