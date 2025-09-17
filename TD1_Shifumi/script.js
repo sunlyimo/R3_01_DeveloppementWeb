@@ -4,6 +4,9 @@ const labelVictoires = document.getElementById("nb-victoires")
 const labelEgalites = document.getElementById("nb-egalites")
 const labelDefaites = document.getElementById("nb-defaites")
 
+const labelPlrChoice = document.getElementById("plr-choice")
+const labelAiChoice = document.getElementById("ai-choice")
+
 const resetButton = document.querySelector(".reset-button")
 
 
@@ -36,6 +39,8 @@ buttons.forEach(button => {
         } else {
             nbDefaites += 1
         }
+        labelPlrChoice.textContent = choixJoueur
+        labelAiChoice.textContent = choixRobot
         actualiserScore()
     })
 })
